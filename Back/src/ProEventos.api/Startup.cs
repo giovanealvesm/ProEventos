@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ProEventos.Persistence;
+using ProEventos.Persistence.Contextos;
+
 
 namespace ProEventos.api
 {
