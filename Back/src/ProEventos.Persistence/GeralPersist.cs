@@ -30,14 +30,10 @@ namespace ProEventos.Persistence
         {
             _context.RemoveRange(entityArray);
         }
-        public async Task<bool> SaveChangeAsync()
+        
+        public async Task<bool> SaveChangesAsync()
         {
             return (await _context.SaveChangesAsync()) > 0;
-        }
-
-        public Task<bool> SaveChangesAsync()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -18,7 +18,6 @@ using ProEventos.Application.Contratos;
 using ProEventos.Application;
 using ProEventos.Persistence.Contratos;
 
-
 namespace ProEventos.api
 {
     public class Startup
@@ -36,7 +35,10 @@ namespace ProEventos.api
             services.AddDbContext<ProEventosContext>(
                 context => context.UseSqlite(Configuration.GetConnectionString("Default"))
             );
-            services.AddControllers();
+            services.AddControllers()
+                    .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = 
+                        Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                    );
 
             services.AddScoped<IEventoService, EventoService>();
             services.AddScoped<IEventoPersist, EventoPersist>();
