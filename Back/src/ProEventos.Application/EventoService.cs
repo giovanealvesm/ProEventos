@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using ProEventos.Domain;
 using ProEventos.Persistence.Contratos;
 
+
 namespace ProEventos.Application.Contratos
 {
     public class EventoService : IEventoService
